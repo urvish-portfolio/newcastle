@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Urvishkumar Badreshiya: a restaurant manager's menu of cases, habits and a first-90-days plan, for a gastro pub Restaurant Manager role in Newcastle NSW.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Urvishkumar Badreshiya">
+<meta property="og:description" content="Busy services, team training, rostering and cost control, set out like a gastro pub menu.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231D2A24'/%3E%3Ctext x='32' y='42' font-family='Georgia, serif' font-size='26' text-anchor='middle' fill='%23D3A350'%3EUB%3C/text%3E%3C/svg%3E">
+<title>Urvishkumar Badreshiya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Spline+Sans+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: a printed gastro-pub menu card. Courses are the sections, dotted leaders run to a "price" column that holds the proof, the plan is chalked on a specials board. */
+:root{
+  --paper:#ECEEE6;      /* sage-tinted menu stock */
+  --card:#F6F7F2;
+  --ink:#1D2A24;        /* bottle-green ink */
+  --muted:#55625B;
+  --brass:#8F611A;      /* brass rail, tap handles */
+  --harbour:#2D5B70;    /* Newcastle harbour */
+  --slate:#222B26;      /* specials board */
+  --chalk:#E9E7DC;
+  --chalk-dim:#B4B9AE;
+  --line:#C3C9BD;
+  --frame:#6B4E2A;      /* timber board frame */
+  --display:"Young Serif", Georgia, "Times New Roman", serif;
+  --body:"Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono:"Spline Sans Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --ease-out:cubic-bezier(.22,1,.36,1);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#131916; --card:#1B2320; --ink:#E4E8E0; --muted:#A1ACA5;
+    --brass:#D3A350; --harbour:#86B6CC; --slate:#0D1210; --chalk:#E9E7DC;
+    --chalk-dim:#A9AFA4; --line:#2F3A34; --frame:#4A3820; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#131916; --card:#1B2320; --ink:#E4E8E0; --muted:#A1ACA5;
+  --brass:#D3A350; --harbour:#86B6CC; --slate:#0D1210; --chalk:#E9E7DC;
+  --chalk-dim:#A9AFA4; --line:#2F3A34; --frame:#4A3820; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:var(--harbour);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible,.side:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15;text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.course{display:flex;align-items:baseline;gap:14px;margin-bottom:28px}
+.course h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+.course .eyebrow{white-space:nowrap}
+section{padding-block:72px}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in oklab,var(--paper) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.name{font-family:var(--display);font-size:1.15rem;white-space:nowrap}
+.nav{display:flex;gap:18px;font-size:.88rem;overflow-x:auto;scrollbar-width:none}
+.nav a{color:var(--muted);text-decoration:none;white-space:nowrap}
+.nav a:hover{color:var(--ink)}
+
+/* hero: the menu card */
+.hero{padding-block:56px 64px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.hero h1{font-size:clamp(2.3rem,5.6vw,4rem);margin-top:14px}
+.hero h1 em{font-style:normal;color:var(--brass)}
+.lede{margin-top:20px;font-size:1.12rem;color:var(--muted);max-width:34em}
+.contact{margin-top:22px;display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.contact span{user-select:all}
+.menu-card{background:var(--card);border:1px solid var(--line);padding:28px 26px 22px;position:relative}
+.menu-card::before{content:"";position:absolute;inset:6px;border:1px solid var(--line);pointer-events:none}
+.menu-card h3{font-size:1.5rem;text-align:center;letter-spacing:.02em}
+.menu-card .sub{text-align:center;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:6px 0 18px}
+.line-item{display:flex;align-items:baseline;gap:10px;padding-block:8px;text-decoration:none;color:var(--ink)}
+.line-item .what{display:flex;flex-direction:column;min-width:0}
+.line-item .what b{font-weight:600}
+.line-item .what small{color:var(--muted);font-size:.84rem}
+.dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-6px);min-width:24px}
+.price{font-family:var(--mono);font-weight:600;font-size:.9rem;color:var(--brass);white-space:nowrap;font-variant-numeric:tabular-nums}
+a.line-item:hover b{color:var(--harbour)}
+
+/* plates */
+.plates{display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
+.plate{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+.plate svg{width:132px;height:132px;max-width:100%;overflow:visible}
+.plate .face{fill:var(--card);stroke:var(--line);stroke-width:1}
+.plate .rim-bg{fill:none;stroke:var(--line);stroke-width:6}
+.plate .rim{fill:none;stroke:var(--brass);stroke-width:6;stroke-linecap:round}
+.plate .val{font-family:var(--display);font-size:25px;fill:var(--ink)}
+.plate .unit{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;fill:var(--muted);text-transform:uppercase}
+.plate p{font-size:.88rem;color:var(--muted);max-width:15em}
+
+/* to start: the route */
+.route-grid{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start}
+.route-card{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px);background:var(--card);border:1px solid var(--line);padding:22px 20px}
+.route-card .eyebrow{display:block;margin-bottom:14px}
+.stops-wrap{position:relative}
+.stops{list-style:none;margin:0;padding:0 0 0 28px;display:flex;flex-direction:column;gap:18px}
+.stops-wrap svg{position:absolute;left:5px;top:12px;width:4px;height:calc(100% - 48px);overflow:visible}
+.stops-wrap svg line{stroke:var(--line);stroke-width:2}
+.stops-wrap svg .drawn{stroke:var(--brass)}
+.stop{position:relative;transition:color .3s var(--ease-out)}
+.stop::before{content:"";position:absolute;left:-27px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--card);border:2px solid var(--line);transition:background-color .3s var(--ease-out),border-color .3s var(--ease-out),transform .3s var(--ease-out)}
+.stop b{display:block;font-weight:600;font-size:.95rem}
+.stop span{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.stop.on b{color:var(--brass)}
+.stop.on::before{background:var(--brass);border-color:var(--brass);transform:scale(1.15)}
+.chapters{display:flex;flex-direction:column;gap:40px;max-width:640px}
+.chapter h3{font-size:1.5rem;margin:6px 0 10px}
+.chapter p+p{margin-top:12px}
+.chapter .where{font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;color:var(--muted)}
+
+/* mains */
+.mains{display:flex;flex-direction:column;gap:0}
+.main{display:grid;grid-template-columns:1fr;padding-block:30px;border-top:1px solid var(--line)}
+.main:last-child{border-bottom:1px solid var(--line)}
+.main-head{display:flex;align-items:baseline;gap:12px}
+.main-head h3{font-size:clamp(1.35rem,2.6vw,1.75rem)}
+.main-body{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:16px}
+.main-body p{color:var(--ink)}
+.main-body p+p{margin-top:10px}
+.served{grid-column:1/-1;margin-top:4px;padding-top:12px;border-top:1px dotted var(--line);font-size:.95rem;color:var(--muted)}
+.served b{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-right:8px;font-weight:600}
+.steps{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px}
+.steps li::marker{font-family:var(--mono);color:var(--brass)}
+.term{border-bottom:1px dotted var(--muted)}
+
+/* sides */
+.sides{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.side{background:var(--card);border:1px solid var(--line);padding:22px 20px;display:flex;flex-direction:column;gap:10px;transition:background-color .35s var(--ease-out),color .35s var(--ease-out),transform .35s var(--ease-out)}
+.side h3{font-size:1.25rem}
+.side p{font-size:.95rem;color:var(--muted);transition:color .35s var(--ease-out)}
+.side .tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);transition:color .35s var(--ease-out)}
+@media (hover:hover){
+  .side:hover,.side:focus-visible{background:var(--slate);color:var(--chalk);transform:translateY(-3px)}
+  .side:hover p,.side:focus-visible p{color:var(--chalk-dim)}
+  .side:hover .tag,.side:focus-visible .tag{color:var(--chalk)}
+}
+
+/* brief */
+.brief-wrap{overflow-x:auto}
+table.brief{width:100%;border-collapse:collapse;min-width:560px}
+.brief th,.brief td{text-align:left;padding:14px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.brief th{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.brief td:first-child{width:44%;font-weight:600}
+.brief td a{white-space:nowrap}
+.brief .neutral td{color:var(--muted);font-weight:400}
+
+/* specials board */
+.board{background:var(--slate);color:var(--chalk);padding:44px 36px 40px;position:relative;border:10px solid var(--frame)}
+.board .eyebrow{color:var(--chalk-dim)}
+.board h2{color:var(--chalk);font-size:clamp(1.8rem,4vw,2.5rem);margin-top:8px}
+.board .bar{margin:30px 0 26px;height:8px;background:color-mix(in oklab,var(--chalk) 14%,transparent);position:relative;overflow:hidden}
+.board .fill{position:absolute;inset:0;background:var(--chalk);transform-origin:left center;transform:scaleX(1)}
+.board .marks{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.board .tick{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--slate)}
+.board .mark{padding-right:18px;border-left:1px dashed color-mix(in oklab,var(--chalk) 35%,transparent);padding-left:14px}
+.board .mark:first-child{border-left:0;padding-left:0}
+.board .mark .days{font-family:var(--mono);font-size:.76rem;color:var(--chalk-dim);letter-spacing:.06em}
+.board .mark h3{font-size:1.25rem;margin:4px 0 8px;color:var(--chalk)}
+.board .mark p{font-size:.92rem;color:var(--chalk-dim)}
+
+/* faq */
+.faq{display:flex;flex-direction:column;max-width:780px}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:18px 0;display:flex;justify-content:space-between;gap:16px;font-family:var(--display);font-size:1.2rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--mono);color:var(--brass);transition:transform .25s var(--ease-out)}
+details[open] summary::after{transform:rotate(45deg)}
+.answer{padding:0 0 20px;color:var(--ink);max-width:68ch}
+.answer p+p,.answer p+ul,.answer ul+p{margin-top:10px}
+.answer ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:6px}
+.answer li b{font-weight:600}
+
+/* close */
+.close{padding-block:80px 64px;text-align:left}
+.close h2{font-size:clamp(1.9rem,4.4vw,3rem);max-width:18em}
+.close .contact{margin-top:20px}
+.foot{border-top:1px solid var(--line);padding-block:22px;font-size:.82rem;color:var(--muted)}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .plates{grid-template-columns:repeat(3,1fr)}
+  .route-grid{grid-template-columns:1fr;gap:28px}
+  .route-card{position:static}
+  .sides{grid-template-columns:repeat(2,1fr)}
+  .main-body{grid-template-columns:1fr;gap:12px}
+  .board .marks{grid-template-columns:1fr 1fr;gap:22px 0}
+  .board .mark:nth-child(3){border-left:0;padding-left:0}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding-inline:16px}
+  section{padding-block:56px}
+  .course{flex-direction:column;gap:6px}
+  .plates{grid-template-columns:repeat(2,1fr)}
+  .plate:last-child{grid-column:1/-1}
+  .sides{grid-template-columns:1fr}
+  .board{padding:32px 20px 28px;border-width:8px}
+  .board .marks{grid-template-columns:1fr}
+  .board .mark{border-left:0;padding-left:0}
+  .nav{display:none}
+  .menu-card{padding:24px 18px 18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}
+}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="name">Urvishkumar Badreshiya</div>
+    <nav class="nav" aria-label="Sections">
+      <a href="#start">To start</a><a href="#mains">Mains</a><a href="#sides">Sides</a><a href="#brief">Your brief</a><a href="#specials">Specials</a><a href="#dessert">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Restaurant Manager · Newcastle NSW</div>
+      <h1>A busy dining room, run <em>as if it were my own</em></h1>
+      <p class="lede">Operations work that started in an engineering plant in Gujarat and moved to restaurant and bakery floors in Birmingham, Leicester and London. This page is set out like a pub menu. The cases are the mains, the daily habits are the sides, and the first 90 days are on the specials board.</p>
+      <div class="contact"><span>urvish.mb@gmail.com</span><span>+91 99988 28555</span><span>linkedin.com/in/urvishkumar-badreshiya</span></div>
+    </div>
+    <div class="menu-card" aria-label="Page menu">
+      <h3>Tonight's menu</h3>
+      <div class="sub">Served from 2018</div>
+      <a class="line-item" href="#start"><span class="what"><b>To start</b><small>Where the recipe came from</small></span><span class="dots"></span><span class="price">5 stops</span></a>
+      <a class="line-item" href="#mains"><span class="what"><b>Mains</b><small>Four cases from the floor</small></span><span class="dots"></span><span class="price">4</span></a>
+      <a class="line-item" href="#sides"><span class="what"><b>Sides</b><small>Six habits, every service</small></span><span class="dots"></span><span class="price">6</span></a>
+      <a class="line-item" href="#brief"><span class="what"><b>Your brief</b><small>The ad, matched to evidence</small></span><span class="dots"></span><span class="price">9 lines</span></a>
+      <a class="line-item" href="#specials"><span class="what"><b>From the board</b><small>The first 90 days</small></span><span class="dots"></span><span class="price">90 days</span></a>
+      <a class="line-item" href="#dessert"><span class="what"><b>Dessert</b><small>Before you call</small></span><span class="dots"></span><span class="price">FAQ</span></a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="numbers">
+  <div class="wrap">
+    <div class="course"><span class="eyebrow">On the pass</span><h2>What a service looked like</h2></div>
+    <div class="plates">
+      <div class="plate">
+        <svg viewBox="0 0 132 132" aria-hidden="true"><circle class="face" cx="66" cy="66" r="62"/><circle class="rim-bg" cx="66" cy="66" r="52"/><circle class="rim" cx="66" cy="66" r="52" data-frac="1" transform="rotate(-90 66 66)"/><text class="val" x="66" y="70" text-anchor="middle">£<tspan class="count" data-to="11">11</tspan>k</text><text class="unit" x="66" y="88" text-anchor="middle">one day</text></svg>
+        <p>Burger Day takings at Birmingham, about double a normal day</p>
+      </div>
+      <div class="plate">
+        <svg viewBox="0 0 132 132" aria-hidden="true"><circle class="face" cx="66" cy="66" r="62"/><circle class="rim-bg" cx="66" cy="66" r="52"/><circle class="rim" cx="66" cy="66" r="52" data-frac="1" transform="rotate(-90 66 66)"/><text class="val" x="66" y="70" text-anchor="middle" style="font-size:21px">120–150</text><text class="unit" x="66" y="88" text-anchor="middle">seats</text></svg>
+        <p>The Birmingham dining room, with food run to the table</p>
+      </div>
+      <div class="plate">
+        <svg viewBox="0 0 132 132" aria-hidden="true"><circle class="face" cx="66" cy="66" r="62"/><circle class="rim-bg" cx="66" cy="66" r="52"/><circle class="rim" cx="66" cy="66" r="52" data-frac="1" transform="rotate(-90 66 66)"/><text class="val" x="66" y="70" text-anchor="middle">35–40</text><text class="unit" x="66" y="88" text-anchor="middle">on shift</text></svg>
+        <p>Team members on one shift in the opening weeks</p>
+      </div>
+      <div class="plate">
+        <svg viewBox="0 0 132 132" aria-hidden="true"><circle class="face" cx="66" cy="66" r="62"/><circle class="rim-bg" cx="66" cy="66" r="52"/><circle class="rim" cx="66" cy="66" r="52" data-frac=".999" transform="rotate(-90 66 66)"/><text class="val" x="66" y="70" text-anchor="middle"><tspan class="count" data-to="99.9" data-dec="1">99.9</tspan>%</text><text class="unit" x="66" y="88" text-anchor="middle">full audit</text></svg>
+        <p>Independent audit in my last week at Birmingham, front of house at 100%: “A near perfectly managed Shack!”</p>
+      </div>
+      <div class="plate">
+        <svg viewBox="0 0 132 132" aria-hidden="true"><circle class="face" cx="66" cy="66" r="62"/><circle class="rim-bg" cx="66" cy="66" r="52"/><circle class="rim ticks" cx="66" cy="66" r="52" data-frac="1" data-ticks="13" transform="rotate(-90 66 66)"/><text class="val" x="66" y="70" text-anchor="middle"><tspan class="count" data-to="13">13</tspan></text><text class="unit" x="66" y="88" text-anchor="middle">checkpoints</text></svg>
+        <p>On the travel path, walked every 1.5 to 2 hours</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="start">
+  <div class="wrap">
+    <div class="course"><span class="eyebrow">To start</span><h2>Where the recipe came from</h2></div>
+    <div class="route-grid">
+      <aside class="route-card" aria-label="Route so far">
+        <span class="eyebrow">Route so far</span>
+        <div class="stops-wrap">
+        <svg aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 4 100"><line x1="2" y1="0" x2="2" y2="100" vector-effect="non-scaling-stroke"/><line class="drawn" x1="2" y1="0" x2="2" y2="100" vector-effect="non-scaling-stroke"/></svg>
+        <ol class="stops">
+          <li class="stop on" data-stop="0"><b>Gujarat, India</b><span>2018–2021 · plant operations</span></li>
+          <li class="stop" data-stop="1"><b>Birmingham, UK</b><span>2022–2024 · Greggs</span></li>
+          <li class="stop" data-stop="2"><b>Leicester, UK</b><span>2024 · Fresh Bake launch</span></li>
+          <li class="stop" data-stop="3"><b>London → Birmingham</b><span>2024–2025 · Shake Shack</span></li>
+          <li class="stop" data-stop="4"><b>Newcastle, NSW</b><span>Next · gastro pub dining</span></li>
+        </ol>
+        </div>
+      </aside>
+      <div class="chapters">
+        <article class="chapter" data-chapter="0">
+          <div class="where">Vikram Engineering Works · Assistant Operations Manager</div>
+          <h3>A factory floor first</h3>
+          <p>After a mechanical engineering degree, my first job was running operations at a plant that makes spinning rings for the textile industry: production planning, purchasing, labour and dispatch to customers across India.</p>
+          <p>The habit that came with me into hospitality is a practical one. Few problems get solved completely on the first try, and solving most of one still moves the business forward.</p>
+        </article>
+        <article class="chapter" data-chapter="1">
+          <div class="where">Greggs (Euro Garages) · Assistant Store Manager</div>
+          <h3>A store without a manager</h3>
+          <p>My first UK site had no store manager, so I learnt to run it. We baked in small batches through the day instead of all at once, made sandwiches to what customers bought, and added a third person at the lunch peak.</p>
+          <p>The site I ran became the base for covering two more every week. It taught me that most waste and most queues start on the roster and the production plan.</p>
+        </article>
+        <article class="chapter" data-chapter="2">
+          <div class="where">Fresh Bake (Treats Foods) · Assistant Manager</div>
+          <h3>A brand's first store</h3>
+          <p>At Fresh Bake we opened the brand's first store in Leicester. I was the youngest voice at the planning table, so ideas had to win on results. Several did, from the store layout to the opening and closing routines.</p>
+          <p>When my manager left in June 2024, I ran the store on my own until I moved on.</p>
+        </article>
+        <article class="chapter" data-chapter="3">
+          <div class="where">Shake Shack (Diverse Dining) · Assistant Operations Manager</div>
+          <h3>An opening with queues for 15 days</h3>
+          <p>Shake Shack grew out of Danny Meyer's Union Square Hospitality Group, so its service standards have fine-dining roots. I trained at Canary Wharf in London, then opened Birmingham as one of a four-person management team, with assistant managers reporting to me.</p>
+          <p>There were queues every day for the first 15 days. We kept a proper welcome at the door, table touches in the dining room and audit-ready kitchens, all at the same time.</p>
+        </article>
+        <article class="chapter" data-chapter="4">
+          <div class="where">Next</div>
+          <h3>A Newcastle dining room</h3>
+          <p>A gastro pub asks for all of it at once. The food has to be right on every plate, a full floor still has to feel personal, and the week's numbers have to balance.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="mains">
+  <div class="wrap">
+    <div class="course"><span class="eyebrow">Mains</span><h2>Four cases from the floor</h2></div>
+    <div class="mains">
+
+      <article class="main" id="burger-day">
+        <div class="main-head"><h3>Burger Day, 11:00</h3><span class="dots"></span><span class="price">≈ £11k</span></div>
+        <div class="main-body">
+          <div>
+            <p>International Burger Day 2025 at Shake Shack Birmingham: buy one, get one free on every burger. By 10:30 a queue had formed behind the shutter.</p>
+            <p>At 11:00, as the doors opened, a delivery worth about £4,000 arrived at the back door. Chilled and frozen stock could not sit outside. The two team members slowest on <span class="term" title="The station where finished orders are checked and handed out">Expo</span> went to put it away, given 15 to 20 minutes, and Expo became my station, with 15 to 20 orders on the screen.</p>
+          </div>
+          <div>
+            <p>Most of the team could work most stations, so people came across to help whenever their own station was under control. At 11:30 I moved to the dining room, where one colleague was covering 120 to 150 seats alone.</p>
+            <p>Once service was back on time, I came off the stations completely: restocking from the back, checking temperatures and talking to guests. After 15:00 we covered breaks two at a time. The day took about £11,000, with no friction anywhere in the team.</p>
+          </div>
+          <p class="served"><b>Served with</b>An area manager once put it plainly: if the manager has to go on station, he is not managing well. Cross-training is what lets the manager step back on the worst day.</p>
+        </div>
+      </article>
+
+      <article class="main" id="training">
+        <div class="main-head"><h3>Food knowledge, taught in three passes</h3><span class="dots"></span><span class="price">3 passes</span></div>
+        <div class="main-body">
+          <div>
+            <p>At Shake Shack and at Fresh Bake, new items reached the team the same way, so that nobody learnt a dish by serving it wrong.</p>
+            <ol class="steps">
+              <li><b>Learn it.</b> The brand's online learning: recipes, procedures, quality checks, and what each item should look and taste like.</li>
+              <li><b>Make it.</b> Next morning, before opening, each person made the item themselves and we rated it together. We moved on only when every item met the standard.</li>
+              <li><b>Ask about it.</b> On shift I asked quick questions at random. A right answer earned a Caught Doing Right card, the recognition card we gave for anything done well.</li>
+            </ol>
+          </div>
+          <div>
+            <p>At Fresh Bake, the learning plan we co-developed opened day one with a tasting session and a short quiz on how each person learns best: by watching, listening or doing.</p>
+            <p>Underneath the three passes sat one standard for the whole team. Checking with the Manager on Duty is always welcome. Serving a guest an item that isn't right is never acceptable.</p>
+            <p>The team held to it carefully.</p>
+          </div>
+          <p class="served"><b>Served with</b>Practice happens before the doors open, so guests only ever see the finished standard.</p>
+        </div>
+      </article>
+
+      <article class="main" id="people">
+        <div class="main-head"><h3>A slow start, then Employee of the Month</h3><span class="dots"></span><span class="price">2 months</span></div>
+        <div class="main-body">
+          <div>
+            <p>A new team member at Birmingham was far slower than everyone else, and I was ready to end his probation. Before deciding, I talked to him after a shift, as a colleague first.</p>
+            <p>He told me about a condition I hadn't known about. Then he showed me how to hand tasks to him so he could do them well, and we rebuilt his shifts around his strengths.</p>
+          </div>
+          <div>
+            <p>Two months later he was Employee of the Month. When an area manager later wanted him dismissed over one wrong order for a senior visitor, I asked for a month. Dismissal never came up again.</p>
+            <p>We are still in touch a year after I left.</p>
+          </div>
+          <p class="served"><b>Served with</b>He helped me help him.</p>
+        </div>
+      </article>
+
+      <article class="main" id="stock">
+        <div class="main-head"><h3>The stock count that only looked bad</h3><span class="dots"></span><span class="price">under £40</span></div>
+        <div class="main-body">
+          <div>
+            <p>One stock count at Birmingham came in about £4,000 below what the system expected. The quick reaction would have been to treat it as a loss and tighten everything.</p>
+            <p>I compared the biggest gaps with the previous count instead. Most of the swing reversed an over-count from the period before, when the stock system had been down.</p>
+          </div>
+          <div>
+            <p>Across the two periods the net gap was under £40. That pointed us at the one product line that was genuinely out, chicken bites, instead of the whole kitchen.</p>
+            <p>The analysis went into the cost report I wrote for the site twice a month.</p>
+          </div>
+          <p class="served"><b>Served with</b>Read the number before reacting to it.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="sides" style="background:var(--card)">
+  <div class="wrap">
+    <div class="course"><span class="eyebrow">Sides</span><h2>Six habits, every service</h2></div>
+    <div class="sides">
+      <div class="side" tabindex="0"><span class="tag">Every 1.5–2 hours</span><h3>Walk the travel path</h3><p>The same 13 checkpoints, from the front door to the staff room, so shortages and compliance slips show up early.</p></div>
+      <div class="side" tabindex="0"><span class="tag">Before service</span><h3>Brief the purpose</h3><p>The team hears the day's goal, what each person is working on, and why each task is asked for. People work better when they are part of the plan.</p></div>
+      <div class="side" tabindex="0"><span class="tag">Kitchen to floor</span><h3>Check the pass</h3><p>Temperature and presentation are checked where the kitchen hands food to the floor, before a plate goes out.</p></div>
+      <div class="side" tabindex="0"><span class="tag">In the room</span><h3>Touch every table</h3><p>Managers and team visit tables, run food and offer refills. A host greets and thanks every guest at the door.</p></div>
+      <div class="side" tabindex="0"><span class="tag">Daily</span><h3>Close the feedback loop</h3><p>Guest feedback read each day and shared in the briefing. Low scorers contacted to put it right. Complaints handled with the five A's: awareness, acknowledgement, apology, action and additional generosity. Regulars' names and orders remembered.</p></div>
+      <div class="side" tabindex="0"><span class="tag">New tasks</span><h3>Do it first, then coach</h3><p>I do a new task myself and time it. Then I hand it over with a time limit and coaching, so the roster stays lean.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="brief">
+  <div class="wrap">
+    <div class="course"><span class="eyebrow">Your brief</span><h2>The ad, matched to evidence</h2></div>
+    <div class="brief-wrap">
+      <table class="brief">
+        <thead><tr><th scope="col">The ad asks for</th><th scope="col">Where to find it</th></tr></thead>
+        <tbody>
+          <tr><td>Lead day-to-day restaurant operations and busy services</td><td><a href="#burger-day">Burger Day</a> · the Birmingham opening in <a href="#start">To start</a></td></tr>
+          <tr><td>Recruit, train and develop a confident front-of-house team</td><td><a href="#training">Food knowledge in three passes</a> · <a href="#people">Employee of the Month</a></td></tr>
+          <tr><td>Welcoming, polished service with strong attention to detail</td><td><a href="#sides">Touch every table · Check the pass</a></td></tr>
+          <tr><td>Work closely with the kitchen</td><td><a href="#sides">Check the pass</a> · running Expo on <a href="#burger-day">Burger Day</a></td></tr>
+          <tr><td>Manage rostering, labour costs and restaurant performance</td><td><a href="#dessert">What will I bring?</a> (rosters and forecasts) · <a href="#sides">Do it first, then coach</a></td></tr>
+          <tr><td>Resolve guest feedback and build repeat business</td><td><a href="#sides">Close the feedback loop</a></td></tr>
+          <tr><td>Commercial awareness and composure under pressure</td><td><a href="#stock">The stock count</a> · <a href="#burger-day">Burger Day</a></td></tr>
+          <tr><td>Enthusiasm for relocating to Newcastle</td><td>Yes, ready to move · <a href="#dessert">FAQ</a></td></tr>
+          <tr class="neutral"><td>NSW certificates for the floor</td><td>NSW RSA and the Food Safety Supervisor certificate, completed in my first week in NSW</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="specials">
+  <div class="wrap">
+    <div class="board">
+      <span class="eyebrow">From the board</span>
+      <h2>The first 90 days</h2>
+      <div class="bar" aria-hidden="true"><div class="fill"></div><span class="tick" style="left:16.67%"></span><span class="tick" style="left:33.33%"></span><span class="tick" style="left:66.67%"></span></div>
+      <div class="marks">
+        <div class="mark"><div class="days">Days 1–15</div><h3>Learn</h3><p>Get trained on the venue's way of doing things: the menu with the kitchen, the suppliers, the bookings pattern and the regulars. Note every bottleneck.</p></div>
+        <div class="mark"><div class="days">Days 16–30</div><h3>Ask why</h3><p>Understand why each process was chosen before changing any of it, from the team and the kitchen as well as the GM.</p></div>
+        <div class="mark"><div class="days">Days 31–60</div><h3>Fix and test</h3><p>Try new approaches on the bottlenecks, one at a time, and keep what the numbers and the guests support.</p></div>
+        <div class="mark"><div class="days">Days 61–90</div><h3>Lock it in</h3><p>Write down what works, train it, and hand it to the team so it runs on any shift.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dessert">
+  <div class="wrap">
+    <div class="course"><span class="eyebrow">Dessert</span><h2>Before you call</h2></div>
+    <div class="faq">
+      <details open>
+        <summary>Why a Newcastle gastro pub?</summary>
+        <div class="answer"><p>A gastro pub sits where I do my best work. The food matters, the floor is busy, and labour, stock and guest scores all have to balance in the same week. The ad describes a venue where food and service are the point, and that is the restaurant I want to run.</p></div>
+      </details>
+      <details>
+        <summary>What will I bring with me?</summary>
+        <div class="answer">
+          <ul>
+            <li><b>Rosters and forecasts.</b> Built the Birmingham management roster before opening, set the daily and weekly sales forecasts, and planned labour, prep and stations to them.</li>
+            <li><b>Cost control.</b> Weekly ordering to each supplier's cut-off, every delivery checked against the order, a cost report twice a month, challenges to delivery-platform refunds, and a review of the site P&amp;L each period.</li>
+            <li><b>Food safety and audits.</b> Co-developed the allergen and ingredient guide at Fresh Bake, ran the travel path, and presented the site on audit walk-rounds, including to senior visitors from the US. In March 2025 the NSF food-safety auditor named handwashing, cross-contamination control and temperature control as the site's three best practices.</li>
+            <li><b>People.</b> Hiring through an in-store trial with a site tour, scored 1 to 5 on commercials, customer, people, and legal and standards, which I co-developed at Fresh Bake. Then inductions and probation reviews, employee-relations casework through a formal framework, the full payroll run in two businesses, and rosters for under-18 team members within their legal limits.</li>
+            <li><b>Openings.</b> Two of them, Fresh Bake's launch store and Shake Shack Birmingham, from snagging to the first weeks of trading.</li>
+            <li><b>Reporting.</b> A weekly commercial report for the area manager: sales against budget, average spend, labour, waste and complaints.</li>
+          </ul>
+        </div>
+      </details>
+      <details>
+        <summary>Can you work in Australia?</summary>
+        <div class="answer"><p>The role is advertised with sponsorship. Newcastle is a designated regional area, so it fits the Skilled Employer Sponsored Regional visa (subclass 494) for a Restaurant Manager. That visa leads to permanent residence after three years.</p></div>
+      </details>
+      <details>
+        <summary>Will you relocate to Newcastle?</summary>
+        <div class="answer"><p>Yes. I'm ready to move as soon as the visa is granted.</p></div>
+      </details>
+      <details>
+        <summary>When could you start?</summary>
+        <div class="answer"><p>Immediately, subject to the visa.</p></div>
+      </details>
+      <details>
+        <summary>Why this move?</summary>
+        <div class="answer"><p>Because each step should be bigger than the last.</p></div>
+      </details>
+      <details>
+        <summary>Which languages do you speak?</summary>
+        <div class="answer"><p>English and Hindi fluently, and Gujarati as my first language.</p></div>
+      </details>
+      <details>
+        <summary>What qualifications do you hold?</summary>
+        <div class="answer"><p>An MBA in Operations Management from Aston University (2:1) and a B.Tech in Mechanical Engineering. UK Level 2 certificates in Food Safety, Fire Marshal and First Aid, and the BCS Foundation and Practitioner certificates in business analysis.</p><p>For NSW, I will complete the Responsible Service of Alcohol (RSA) course and the Food Safety Supervisor certificate in my first week.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <span class="eyebrow">Last orders</span>
+    <h2 style="margin-top:10px">Your Newcastle dining room, run as if it were my own.</h2>
+    <div class="contact"><span>urvish.mb@gmail.com</span><span>+91 99988 28555</span><span>linkedin.com/in/urvishkumar-badreshiya</span></div>
+  </div>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap">Personal page. Not affiliated with or endorsed by any employer named here.</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var C = 2*Math.PI*52;
+  // Plate rims: final state at rest (no JS / reduced motion shows full rims).
+  document.querySelectorAll('.plate .rim').forEach(function(r){
+    var f = parseFloat(r.getAttribute('data-frac')) || 1;
+    var t = parseInt(r.getAttribute('data-ticks'),10);
+    if (t){ var seg = C/t; r.style.strokeDasharray = (seg*0.72)+' '+(seg*0.28); r.style.strokeLinecap='butt'; }
+    else { r.style.strokeDasharray = C; r.style.strokeDashoffset = C*(1-f); }
+  });
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var stops = Array.prototype.slice.call(document.querySelectorAll('.stop'));
+  function setStop(i){ stops.forEach(function(s,k){ s.classList.toggle('on', k<=i); }); }
+
+  if (!window.gsap || !window.ScrollTrigger){ setStop(stops.length-1); return; }
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Route card: stops light up as each chapter is read (functional, kept under reduced motion).
+  document.querySelectorAll('.chapter').forEach(function(ch){
+    var i = parseInt(ch.getAttribute('data-chapter'),10);
+    ScrollTrigger.create({ trigger: ch, start: 'top 60%', end: 'bottom 40%',
+      onEnter: function(){ setStop(i); }, onEnterBack: function(){ setStop(i); } });
+  });
+
+  if (reduce) return;
+
+  // Route line draws with reading progress.
+  var drawn = document.querySelector('.stops-wrap .drawn');
+  if (drawn){
+    gsap.fromTo(drawn, { attr:{ y2: 8 } }, { attr:{ y2: 100 }, ease:'none',
+      scrollTrigger:{ trigger:'.chapters', start:'top 60%', end:'bottom 55%', scrub:0.6 } });
+  }
+
+  // Plates: rims fill and numbers count once, when the row scrolls into view.
+  // If the row is already on screen at load, keep the finished values (complete first frame).
+  var platesEl = document.querySelector('.plates');
+  if (platesEl && platesEl.getBoundingClientRect().top > window.innerHeight) ScrollTrigger.create({ trigger:'.plates', start:'top 80%', once:true, onEnter: function(){
+    document.querySelectorAll('.plate .rim:not(.ticks)').forEach(function(r){
+      var f = parseFloat(r.getAttribute('data-frac')) || 1;
+      gsap.fromTo(r, { strokeDashoffset: C }, { strokeDashoffset: C*(1-f), duration: 1.1, ease: 'power3.out' });
+    });
+    document.querySelectorAll('.plate .ticks').forEach(function(r){
+      gsap.fromTo(r, { rotation: -150, svgOrigin: '66 66' }, { rotation: -90, svgOrigin: '66 66', duration: 1.1, ease: 'power3.out' });
+    });
+    document.querySelectorAll('.plate .count').forEach(function(el){
+      var to = parseFloat(el.getAttribute('data-to')), dec = parseInt(el.getAttribute('data-dec')||'0',10);
+      var o = { v: 0 };
+      gsap.to(o, { v: to, duration: 1.1, ease: 'power3.out', onUpdate: function(){ el.textContent = o.v.toFixed(dec); } });
+    });
+  }});
+
+  // Specials board: the 90-day bar fills as the board is read.
+  var fill = document.querySelector('.board .fill');
+  if (fill){
+    gsap.fromTo(fill, { scaleX: 0.04 }, { scaleX: 1, ease: 'none',
+      scrollTrigger: { trigger: '.board', start: 'top 75%', end: 'bottom 70%', scrub: 0.6 } });
+  }
+})();
+</script>
+
+</body>
+</html>
